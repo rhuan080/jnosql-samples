@@ -1,0 +1,10 @@
+net/rhuanrocha/itrelationship/itemrelationship/Relationship.class
+net/rhuanrocha/itrelationship/itemrelationship/ItRelationshipService.class
+net/rhuanrocha/itrelationship/DriverProducer.class
+net/rhuanrocha/itrelationship/itemrelationship/ItRelationshipEndpoint.class
+net/rhuanrocha/itrelationship/MicroProfileApplication.class
+net/rhuanrocha/itrelationship/itemrelationship/CatalogItemDao.class
+net/rhuanrocha/itrelationship/itemrelationship/ItRelationshipDao.class
+net/rhuanrocha/itrelationship/CORSFilter.class
+net/rhuanrocha/itrelationship/itemrelationship/ItRelationshipRepository.class
+net/rhuanrocha/itrelationship/itemrelationship/CatalogItem.class

@@ -1,0 +1,60 @@
+version: '3'
+services:
+  itcatalog:
+    build: ./itcatalog
+    ports:
+     - "8080:8080"
+     - "5006:5006"
+    networks:
+      itcatalog-net:
+        ipv4_address: 172.18.0.3 
+    volumes:
+     - ./config:/etc/itcatalog/config
+ 
+  bd_itcatalog:
+    image: mongo:4.1.5-xenial
+    ports: 
+     - "27017:27017"
+    networks:
+       itcatalog-net:
+        ipv4_address: 172.18.0.2
+    volumes:
+      - /opt/mongodb/data:/data/db
+  bd_itrelationship:
+    image: neo4j:3.5.0
+    ports: 
+     - "7474:7474"
+     - "7687:7687"
+    environment: 
+     - NEO4J_AUTH=neo4j/test
+    volumes:
+     - /var/lib/neo4j/neo4j/data:/data 
+     
+     - /var/lib/neo4j/neo4j/import:/var/lib/neo4j/import
+     - /var/lib/neo4j/neo4j/plugins:/plugins
+    networks:
+       itcatalog-net:
+        ipv4_address: 172.18.0.4
+  itrelationship:
+    build: ./itrelationship
+    ports:
+     - "8081:8080"
+     - "5007:5006"
+    networks:
+      itcatalog-net:
+        ipv4_address: 172.18.0.5 
+    volumes:
+     - ./config:/etc/relationship/config
+ # app-web:
+ #   build: ./app-web
+ #   ports:
+ #     - "80:8080"
+ #  networks:
+ #     itcatalog-net:
+ #       ipv4_address: 172.18.0.1
+networks:
+    itcatalog-net:
+        driver: bridge
+        ipam:
+          config:
+            - subnet: 172.18.0.0/16

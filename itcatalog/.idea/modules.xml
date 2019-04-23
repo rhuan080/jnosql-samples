@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/itcatalog/itcatalog.iml" filepath="$PROJECT_DIR$/itcatalog/itcatalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/itrelationship/itrelationship.iml" filepath="$PROJECT_DIR$/itrelationship/itrelationship.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microprofile-example.iml" filepath="$PROJECT_DIR$/microprofile-example.iml" />
+    </modules>
+  </component>
+</project>

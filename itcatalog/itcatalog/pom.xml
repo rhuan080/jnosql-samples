@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.rhuanrocha</groupId>
+  <artifactId>itcatalog</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <properties>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse.microprofile</groupId>
+      <artifactId>microprofile</artifactId>
+      <version>2.1</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>${project.artifactId}</finalName>
+  </build>
+  <profiles>
+    <profile>
+      <id>thorntail-v2</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>io.thorntail</groupId>
+            <artifactId>thorntail-maven-plugin</artifactId>
+            <version>${version.thorntail}</version>
+            <configuration>
+            <properties>
+              <swarm.bind.address>0.0.0.0</swarm.bind.address>
+              <java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
+            </properties>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>package</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+      <properties>
+        <version.thorntail>2.3.0.Final</version.thorntail>
+      </properties>
+      <dependencyManagement>
+        <dependencies>
+          <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>bom-all</artifactId>
+            <version>${version.thorntail}</version>
+            <type>pom</type>
+            <scope>import</scope>
+          </dependency>
+        </dependencies>
+      </dependencyManagement>
+      <dependencies>
+        <dependency>
+          <groupId>io.thorntail</groupId>
+          <artifactId>microprofile</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.jnosql.artemis</groupId>
+          <artifactId>artemis-document</artifactId>
+          <version>0.0.7</version>
+        </dependency>
+        <dependency>
+          <groupId>org.jnosql.diana</groupId>
+          <artifactId>mongodb-driver</artifactId>
+          <version>0.0.7</version>
+        </dependency>
+
+
+
+
+      </dependencies>
+
+    </profile>
+  </profiles>
+</project>

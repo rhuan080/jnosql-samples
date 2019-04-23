@@ -1,0 +1,8 @@
+com/rhuanrocha/itcatalog/catalogitem/CatalogItemRepository.class
+com/rhuanrocha/itcatalog/catalogitem/RemoteEJB.class
+com/rhuanrocha/itcatalog/CORSFilter.class
+com/rhuanrocha/itcatalog/MicroProfileApplication.class
+com/rhuanrocha/itcatalog/catalogitem/CatalogItemDao.class
+com/rhuanrocha/itcatalog/catalogitem/CatalogItemService.class
+com/rhuanrocha/itcatalog/catalogitem/CatalogItemEndpoint.class
+com/rhuanrocha/itcatalog/catalogitem/CatalogItem.class
